@@ -15,10 +15,10 @@
   <form method="post">
       <input type="text" pattern="^\d*(\.\d{0,2})?$" required name="a" value="${a}">
       <input type="text" pattern="^\d*(\.\d{0,2})?$" required name="b" value="${b}">
-      <input name="ope" value="+" type="submit">Additional + </input>
-      <input name="ope" value="-" type="submit">Subtraction - </input>
-      <input name="ope" value="*" type="submit">Multiplication X </input>
-      <input name="ope" value="/" type="submit">Division / </input>
+      <button name="ope" value="+" type="submit">Additional + </button>
+      <button name="ope" value="-" type="submit">Subtraction - </button>
+      <button name="ope" value="*" type="submit">Multiplication X </button>
+      <button name="ope" value="/" type="submit">Division / </button>
       <p>Result:${result}</p>
   </form>
   </body>
