@@ -26,11 +26,10 @@ public class Calculator {
                        @RequestParam(value = "b") double b,
                        Model model) {
 
-        double resultAdd = calculatorService.calculate(op,a,b);
-        model.addAttribute("resultAdd", resultAdd);
+        double result = calculatorService.calculate(op,a,b);
+        model.addAttribute("result", result);
         model.addAttribute("a", a);
         model.addAttribute("b", b);
-
         return "index";
     }
 }

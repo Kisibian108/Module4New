@@ -19,8 +19,7 @@
       <input name="ope" value="-" type="submit">Subtraction - </input>
       <input name="ope" value="*" type="submit">Multiplication X </input>
       <input name="ope" value="/" type="submit">Division / </input>
-      <p>Result:${resultAdd}</p>
-<%--    <input type = "submit" id = "submit" value = "save"/>--%>
+      <p>Result:${result}</p>
   </form>
   </body>
 </html>
