@@ -21,12 +21,12 @@ public class Calculator {
 
     @PostMapping("")
     public String save(
-                       @RequestParam(value = "ope") String op,
+                       @RequestParam(value = "ope") String ope,
                        @RequestParam(value = "a") double a,
                        @RequestParam(value = "b") double b,
                        Model model) {
 
-        double result = calculatorService.calculate(op,a,b);
+        double result = calculatorService.calculate(ope,a,b);
         model.addAttribute("result", result);
         model.addAttribute("a", a);
         model.addAttribute("b", b);
