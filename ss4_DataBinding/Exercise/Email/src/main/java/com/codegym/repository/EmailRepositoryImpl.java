@@ -15,10 +15,30 @@ public class EmailRepositoryImpl implements IEmailRepository{
     static List<Email> emailList = new ArrayList<>();
 
     static {
-        emailList.add(new Email(1,"China",25,"Spam filter","Thor"  ));
-        emailList.add(new Email(2,"English",50,"Enable Spam filter","Lam"  ));
-        emailList.add(new Email(3,"Korea",100,"Spam filter","Linh"  ));
-        emailList.add(new Email(4,"France",75,"Enable Spam filter","Ngoc"  ));
+        emailList.add(new Email(1,"Chinese",25,true,"Thor"  ));
+        emailList.add(new Email(2,"English",50,false,"Lam"  ));
+        emailList.add(new Email(3,"VietNamese",100,true,"Linh"  ));
+        emailList.add(new Email(4,"Japanese",75,false,"Ngoc"  ));
+    }
+
+    public static final List<String> languageList = new ArrayList<>();
+
+    static {
+        languageList.add("English");
+        languageList.add("Vietnamese");
+        languageList.add("Japanese");
+        languageList.add("Chinese");
+    }
+
+    public static final List<Integer> pageSizeList = new ArrayList<>();
+
+    static {
+        pageSizeList.add(5);
+        pageSizeList.add(10);
+        pageSizeList.add(15);
+        pageSizeList.add(25);
+        pageSizeList.add(50);
+        pageSizeList.add(100);
     }
 
     @Override
@@ -39,7 +59,23 @@ public class EmailRepositoryImpl implements IEmailRepository{
     }
 
     @Override
-    public Email findById(int id) {
-        return emailRepository.findById(id);
+    public Email findById(Integer id) {
+        Email email = null;
+        for (Email item : emailList) {
+            if (item.getId().equals(id)) {
+                email = new Email(item.getId(), item.getLanguage(), item.getPageSize(), item.getSpamFilter(), item.getSignature());
+            }
+        }
+        return email;
+    }
+
+    @Override
+    public List<String> showLanguage() {
+        return languageList;
+    }
+
+    @Override
+    public List<Integer> showPaperSize() {
+        return pageSizeList;
     }
 }

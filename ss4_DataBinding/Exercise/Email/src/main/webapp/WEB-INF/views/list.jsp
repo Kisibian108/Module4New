@@ -58,9 +58,9 @@
 <%--                    <span>${lang}</span>--%>
 <%--                </c:forEach>--%>
 <%--            </td>--%>
-            <td><button><a href="/email/edit?id=${email.id}">Edit</a></button></td>
+            <td><button><a href="/edit?id=${email.id}">Edit</a></button></td>
         </tr>
-
+<%--<a href="/update?id=${email.id}">--%>
     </c:forEach>
     </tbody>
 </table>
@@ -78,3 +78,4 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+

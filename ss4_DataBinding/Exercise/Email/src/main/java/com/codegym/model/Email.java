@@ -2,16 +2,16 @@ package com.codegym.model;
 
 public class Email {
 
-    private int id;
+    private Integer id;
     private String language;
     private int pageSize;
-    private String spamFilter;
+    private Boolean spamFilter;
     private String signature;
 
     public Email() {
     }
 
-    public Email(int id, String language, int pageSize, String spamFilter, String signature) {
+    public Email(Integer id, String language, int pageSize, Boolean spamFilter, String signature) {
         this.id = id;
         this.language = language;
         this.pageSize = pageSize;
@@ -19,11 +19,11 @@ public class Email {
         this.signature = signature;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -43,11 +43,11 @@ public class Email {
         this.pageSize = pageSize;
     }
 
-    public String getSpamFilter() {
+    public Boolean getSpamFilter() {
         return spamFilter;
     }
 
-    public void setSpamFilter(String spamFilter) {
+    public void setSpamFilter(Boolean spamFilter) {
         this.spamFilter = spamFilter;
     }
 

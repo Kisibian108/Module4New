@@ -23,8 +23,18 @@ public class EmailSeriveImpl implements IEmailService {
     }
 
     @Override
-    public Email findById(int id) {
+    public Email findById(Integer id) {
         return emailRepository.findById(id);
+    }
+
+    @Override
+    public List<String> showLanguage() {
+        return emailRepository.showLanguage();
+    }
+
+    @Override
+    public List<Integer> showPaperSize() {
+        return emailRepository.showPaperSize();
     }
 }
 

@@ -24,7 +24,7 @@
 <%--private String startDate;--%>
 <%--private String endDate;--%>
 <%--private String infomation;--%>
-<form:form method="post" modelAttribute="medical">
+<form:form method="post" modelAttribute="medicalDeclarationList">
     <table>
         <tr>
             <td>Ho ten (ghi chu IN HOA)(*)</td>
