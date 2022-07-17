@@ -11,7 +11,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 
 @Controller
-//@RequestMapping("email/")
 public class EmailController {
 
     @Autowired
@@ -35,9 +34,8 @@ public class EmailController {
     }
 
     @PostMapping("edit")
-    public String updateEmail(@ModelAttribute("email") Email email, RedirectAttributes redirectAttributes) {
+    public String updateEmail(@ModelAttribute("email") Email email) {
         emailService.save(email.getId(), email);
-//        redirectAttributes.addFlashAttribute("mess","edit" + email.getId());
         return "redirect:/list";
     }
 }
