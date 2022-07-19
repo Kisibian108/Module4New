@@ -1,5 +1,9 @@
 package com.codegym.configuration;
 
+import com.codegym.repository.IProductRepository;
+import com.codegym.repository.ProductRepositoryImpl;
+import com.codegym.service.IProductService;
+import com.codegym.service.ProductService;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -50,5 +54,15 @@ public class AppConfiguration implements WebMvcConfigurer,  ApplicationContextAw
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setCharacterEncoding("UTF-8");
         return viewResolver;
+    }
+
+    @Bean
+    public IProductRepository repository(){
+        return new ProductRepositoryImpl();
+    }
+
+    @Bean
+    public IProductService service(){
+        return new ProductService();
     }
 }

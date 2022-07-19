@@ -2,13 +2,10 @@ package com.codegym.controller;
 
 import com.codegym.model.Product;
 import com.codegym.service.IProductService;
-import com.codegym.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -17,7 +14,8 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
-    IProductService productService = new ProductService();
+    @Autowired
+    IProductService productService;
 
     @GetMapping("")
     public String index(Model model) {
@@ -58,7 +56,7 @@ public class ProductController {
     }
 
     @PostMapping("/delete")
-    public String delete(Product product, RedirectAttributes redirect) {
+    public String delete(@ModelAttribute("product") Product product, RedirectAttributes redirect) {
         productService.remove(product.getId());
         redirect.addFlashAttribute("success", "Removed product successfully!");
         return "redirect:/product";
@@ -71,7 +69,7 @@ public class ProductController {
     }
 
     @PostMapping("/search")
-    public String search(Model model, String name) {
+    public String search(@RequestParam("name") String name, Model model) {
         model.addAttribute("products",productService.searchByName(name));
         return "/index";
     }

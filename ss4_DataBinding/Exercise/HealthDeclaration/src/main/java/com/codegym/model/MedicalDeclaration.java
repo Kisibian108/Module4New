@@ -2,7 +2,7 @@ package com.codegym.model;
 
 public class MedicalDeclaration {
 
-
+    private int id;
     private String name;
     private int year;
     private String gender;
@@ -16,6 +16,21 @@ public class MedicalDeclaration {
     private String infomation;
 
     public MedicalDeclaration() {
+    }
+
+    public MedicalDeclaration(int id, String name, int year, String gender, String national, int idCard, String travel, String idTravel, String chair, String startDate, String endDate, String infomation) {
+        this.id = id;
+        this.name = name;
+        this.year = year;
+        this.gender = gender;
+        this.national = national;
+        this.idCard = idCard;
+        this.travel = travel;
+        this.idTravel = idTravel;
+        this.chair = chair;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.infomation = infomation;
     }
 
     public MedicalDeclaration(String name, int year, String gender, String national, int idCard, String travel, String idTravel, String chair, String startDate, String endDate, String infomation) {
@@ -119,6 +134,14 @@ public class MedicalDeclaration {
 
     public void setInfomation(String infomation) {
         this.infomation = infomation;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
