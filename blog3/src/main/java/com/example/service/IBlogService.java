@@ -1,6 +1,7 @@
 package com.example.service;
 
-import com.codegym.model.Blog;
+import com.example.model.Blog;
+import com.example.model.Blog;
 
 import java.util.List;
 

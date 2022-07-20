@@ -1,7 +1,9 @@
 package com.example.service;
 
-import com.codegym.model.Blog;
-import com.codegym.repository.IBlogRepository;
+import com.example.model.Blog;
+import com.example.repository.IBlogRepository;
+import com.example.model.Blog;
+import com.example.repository.IBlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
